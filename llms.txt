@@ -1,6 +1,6 @@
-# Rosvon
+# Rosvon | Self-Improvement
 
-> Rosvon is an Android self-development ecosystem for building habits, organizing tasks and goals, journaling, managing projects, practicing digital discipline, using gamification, and accessing optional AI coaching.
+> Rosvon | Self-Improvement is an Android self-development ecosystem for building habits, organizing tasks and goals, journaling, managing projects, practicing digital discipline, using gamification, and accessing optional AI coaching.
 
 Official website: https://rosvon.online/
 Android app: https://play.google.com/store/apps/details?id=com.roshan.rosvon

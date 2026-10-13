@@ -268,8 +268,9 @@
     <div class="container">
         <header>
             <h1>Privacy Policy — <span class="app-name">Rosvon | Self-Improvement</span></h1>
-            <p class="last-updated">Last Updated: October 7, 2026</p>
-            <p class="effective-date">Effective Date: September 3, 2026</p>
+            <p class="last-updated">Last Updated: October 13, 2026</p>
+            <p class="effective-date">Effective Date: October 1, 2026</p>
+            <nav class="nav-links" aria-label="Legal documents"><a href="index.html">Home</a><a href="terms-of-service.html">Terms</a><a href="privacy-policy.html">Privacy</a><a href="community-guidelines.html">Community</a><a href="delete-account.html">Delete account</a></nav>
         </header>
 
         <!-- Cosmic Vibe Philosophy Callout -->
@@ -319,7 +320,7 @@
                 <span class="commitment-emoji">🗑️</span>
                 <div class="commitment-text">
                     <strong>Account deletion is available, with disclosed limits.</strong>
-                    <p>The in-app flow attempts to remove local, Drive, Firebase/Auth, community, Storage, and purchase-token data. Network or provider failure may require a retry. The current backend does not automatically delete two transaction/audit collections identified in Section 9. Email requests cannot remove local-device or Drive data.</p>
+                    <p>The in-app flow attempts to remove local, Drive, Firebase/Auth, community, Storage, and user-linked purchase-token, billing-event, and void-event data. Network or provider failure may require a retry. The current backend does not automatically delete two transaction/audit collections identified in Section 9. Email requests cannot remove local-device or Drive data.</p>
                 </div>
             </div>
         </div>
@@ -333,7 +334,7 @@
             <h3>1.1 Information You Provide Directly</h3>
             <ul>
                 <li><strong>Account Information:</strong> Google Sign-In provides a Firebase user ID, email address, and display name. Firebase records can also include account creation/update timestamps, backup-setup state, game Health/HP, entitlements, and purchase-verification information. Rosvon does not retrieve your Google password and does not automatically store your Google profile picture. Guest mode is available without a Rosvon cloud account.</li>
-                <li><strong>Community Profile:</strong> Signing in currently creates a community profile with a username, display name, bio, profile-photo URL, XP, level, rank, achievement identifiers/count, and a privacy flag. The profile is public by default. Privacy mode hides statistics in the current client but may leave the name, bio, and profile photo visible to signed-in users.</li>
+                <li><strong>Leaderboard & Community Profile:</strong> Signing in currently creates a leaderboard and community profile with a username, display name, bio, profile-photo URL, XP, level, rank, achievement identifiers/count, and a privacy flag. The profile is public by default. Privacy mode hides statistics in the current client but may leave the name, bio, and profile photo visible to signed-in users.</li>
                 <li><strong>Profile Photo:</strong> A photo you select is copied to app-private local storage and may be included in Drive backup. If you are signed in, the current App also uploads a compressed copy to Firebase Storage and links it to your community profile without a separate "Go Public" step. Profile images can be read by signed-in community users.</li>
                 <li><strong>Core User Content:</strong> Tasks, habits, journals, notes, projects, areas, resources, and Protocol settings/history are stored locally by default. Supported records and media are copied to your Drive App Data folder only after backup setup. Full records are not stored in the community database, but selected task, habit, project, and focus context may be sent to AI when the corresponding AI controls are enabled.</li>
                 <li><strong>AI Chat and Memory:</strong> Chat messages and learned memory summaries are stored locally. An AI request can contain your message, recent chat, enabled app context, and identity/coaching-profile fields. After a response, Rosvon may make a second cloud request containing the raw user message and up to 500 characters of the AI response to decide whether to save a local memory.</li>
@@ -343,8 +344,8 @@
             <ul>
                 <li><strong>Analytics Data:</strong> Firebase Analytics is included in the release App and may collect automatic app, session, device, and pseudonymous installation events. The audited code does not set a Firebase Analytics user ID and does not contain explicit per-screen Analytics logging. Exact retention is controlled in the Firebase/Google Analytics console.</li>
                 <li><strong>Crash and Performance Data:</strong> Firebase Crashlytics, Performance Monitoring, and Sessions may process pseudonymous installation identifiers, device/app details, stack traces, diagnostics, and performance measurements. AI performance traces record metadata such as request/response length, timing, and result status; the audited trace code does not attach prompt text.</li>
-                <li><strong>Advertising Data:</strong> Google Mobile Ads is loaded for penalty-display and opt-in rewarded-ad flows. The current App uses Google's sample/test application and ad-unit identifiers, so it does not currently serve production monetized inventory. Ordinary ad requests are used; the App does not currently implement Google UMP consent collection or enforce non-personalized requests. Google SDKs may process advertising/device identifiers, IP-derived coarse location, device information, impressions, clicks, and fraud/security signals under Google's terms.</li>
-                <li><strong>Purchase and Credit Records:</strong> Google Play processes purchase details. Firebase Functions/Firestore store purchase tokens or hashes, product/entitlement state, request/event identifiers, user ID, quantities/amounts, and timestamps for verification, AI-credit consumption, and Golden Key redemption.</li>
+                <li><strong>Advertising Data:</strong> Google Mobile Ads is loaded for penalty-display and opt-in rewarded-ad flows. The release build is configured with production Google AdMob application and ad-unit identifiers for real advertising; debug and performance builds use test identifiers. Ad availability depends on Google and network conditions. Ordinary ad requests are used; the App does not currently implement Google UMP consent collection or enforce non-personalized requests. Google SDKs may process advertising/device identifiers, IP-derived coarse location, device information, impressions, clicks, and fraud/security signals under Google's terms.</li>
+                <li><strong>Purchase and Credit Records:</strong> Google Play processes purchase and payment details. Firebase Functions/Firestore store hashed purchase tokens, product and purchase type, Google Play order ID, subscription base-plan/state/expiry metadata, a hashed app-account identifier, granted or reversed entitlement quantities, request/event identifiers, Firebase user ID, and timestamps. Cloud Functions use these records to verify and deduplicate purchases and renewals, acknowledge or consume completed purchases, process real-time billing notifications, and reconcile refunds or chargebacks through Google Play's Voided Purchases API. Raw payment-card details are not provided to Rosvon.</li>
             </ul>
 
             <h3>1.3 Information Accessed On-Device Only (Never Collected)</h3>
@@ -361,7 +362,7 @@
         <section>
             <h2>2. What We Do NOT Collect</h2>
             <div class="info-box">
-                <p>No: We do <strong>not</strong> collect your location data.</p>
+                <p>Rosvon does not request GPS or precise-location access. Google and other network providers may infer approximate location from IP addresses.</p>
                 <p>No: We do <strong>not</strong> access your contacts, call logs, or SMS.</p>
                 <p>No: We do <strong>not</strong> read your emails or messages.</p>
                 <p>No: Rosvon does <strong>not</strong> implement its own cross-app or website tracking profile. Embedded Google Analytics and Mobile Ads SDKs may process device or advertising identifiers under Google's policies.</p>
@@ -382,13 +383,13 @@
                 <thead>
                     <tr>
                         <th>Purpose</th>
-                        <th>Legal Basis (GDPR)</th>
+                        <th>Processing basis and consent</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Provide, operate, and maintain the App</td>
-                        <td>Contract performance</td>
+                        <td>Provide the requested service under a valid agreement; separate consent where required. A minor's use alone does not establish contractual capacity.</td>
                     </tr>
                     <tr>
                         <td>Provide signed-in account, community, entitlement, and game-state services</td>
@@ -399,20 +400,20 @@
                         <td>Provide the requested AI interaction; consent where required</td>
                     </tr>
                     <tr>
-                        <td>Load Google test penalty/rewarded advertising and prevent ad fraud</td>
+                        <td>Deliver Google AdMob penalty-display/rewarded advertising and prevent ad fraud</td>
                         <td>Consent where required; the current App does not yet implement UMP consent collection</td>
                     </tr>
                     <tr>
                         <td>Send service-related notifications (not marketing)</td>
-                        <td>Legitimate interest</td>
+                        <td>Support requested features, reliability, and security under the lawful basis applicable to the user and processing; obtain consent where required.</td>
                     </tr>
                     <tr>
                         <td>Diagnose crashes and improve performance</td>
-                        <td>Legitimate interest</td>
+                        <td>Support requested features, reliability, and security under the lawful basis applicable to the user and processing; obtain consent where required.</td>
                     </tr>
                     <tr>
                         <td>Improve the App based on aggregated analytics</td>
-                        <td>Legitimate interest</td>
+                        <td>Support requested features, reliability, and security under the lawful basis applicable to the user and processing; obtain consent where required.</td>
                     </tr>
                     <tr>
                         <td>Comply with legal obligations</td>
@@ -473,7 +474,7 @@
                     </tr>
                     <tr>
                         <td><strong>Advertising identifiers / AdServices</strong> (SDK-declared)</td>
-                        <td>Google Mobile Ads measurement, delivery, security, and fraud prevention. The current build uses Google test identifiers.</td>
+                        <td>Google Mobile Ads measurement, delivery, security, and fraud prevention. The release build uses production AdMob identifiers; debug and performance builds use test identifiers.</td>
                         <td>Yes (processed by Google)</td>
                     </tr>
                     <tr>
@@ -488,12 +489,18 @@
         <!-- ═══ 5. AI Features ═══════════════════════════════════════════ -->
         <section>
             <h2>5. AI Features and Data Processing</h2>
+            <p>Rosvon's minimum age does not override a third-party provider's age restrictions. Google's current Firebase AI Logic and Google Cloud generative-AI terms restrict use in applications directed towards or likely to be accessed by individuals under 18. Parent or guardian permission does not override those terms. The current cloud-AI integration must be resolved before Rosvon is released for a 13+ audience; these Terms do not claim an implemented teen-AI restriction or provider approval. See the <a href="https://firebase.google.com/terms">Firebase terms</a> and <a href="https://cloud.google.com/terms/service-terms">Google Cloud Service Specific Terms, section 20(d)</a>.</p>
             <p>Rosvon includes an AI assistant called "Aria". AI requests are cloud requests. In the current version, the master AI-content switch and individual context categories are enabled by default; change them before sending a message if you do not want a category attached.</p>
 
             <h3>5.1 Firebase AI Logic / Agent Platform Gemini Processing</h3>
             <p>Aria sends requests through Firebase AI Logic to Google's Agent Platform Gemini service (formerly described as Vertex AI). A request can contain your message, recent chat, locally learned memories, enabled tasks/habits/projects/resources/focus summaries, and profile or runtime context such as name, age, personality/coaching fields, current screen, time, battery/offline state, streak, discipline, burnout, and mood. Google processes requests under the applicable Firebase, Google Cloud, and Gemini terms, project configuration, and retention practices. The App cannot verify or guarantee zero provider retention or model-training use.</p>
 
-            <h3>5.2 AI Privacy Controls</h3>
+            <h3>5.2 Google Search Grounding</h3>
+            <p>Google Search is available to Aria's chat model. The model decides whether to search, for example when you request an online search or verification, or an answer needs current or uncertain public information. It is instructed to answer routine greetings and coaching without searching when existing knowledge and conversation context are sufficient; this is not a guarantee that a particular message will or will not trigger a search.</p>
+            <p>When search is used, Google processes your message and attached AI context to generate one or more queries sent to Google Search and uses the results to help answer. Aria is instructed to avoid private app data and account identifiers in search queries, but this instruction is not a technical redaction guarantee. Disabling app-content sharing does not disable Google Search for chat requests.</p>
+            <p>Under <a href="https://cloud.google.com/terms/service-terms">Google Cloud Service Specific Terms, section 20(k)(ii)</a>, Google may retain search queries derived from prompts and supplied context, not associated with Rosvon or its users, for up to three days for debugging. This search-log period is separate from local chat storage and other provider or project-configured retention described in this Policy.</p>
+
+            <h3>5.3 AI Privacy Controls</h3>
             <p>You can disable app-data categories via <strong>Aria → three-dot menu → Privacy</strong>. Notes are separately controlled from Journal and Reflection entries, and project resource links follow Tasks &amp; Projects. Turning off the master content control blocks new live app content and runtime context; it does not erase recent chat or learned memories, and your typed message is still sent when you request a response. Rosvon may make a second AI request using the raw user message and up to 500 characters of the response to decide whether to save a local memory. Aria does not receive raw Usage Access events, screen-time totals, individual package names, app limits, or blocked-app lists. If Focus Context is enabled, selected recent or active focus-session summaries may be attached.</p>
         </section>
 
@@ -525,7 +532,8 @@
         <!-- ═══ 7. Advertising ═══════════════════════════════════════════ -->
         <section>
             <h2>7. Advertising</h2>
-            <p>Rosvon includes Google Mobile Ads for penalty-display and user-initiated rewarded-ad flows. The current App uses Google's sample/test application and ad-unit identifiers and therefore does not currently serve production monetized inventory. If an ad request is made, Google's SDK may process:</p>
+            <p><strong>Penalty-screen choices:</strong> Habit, Task, Goal, and Focus/Protocol penalty screens can be cleared using 199 Gold (in-app coins) or 1 Golden Key, subject to available balance. Watching 5 rewarded ads is an optional alternative. Golden Key redemption requires an internet connection. Penalty-display ads may still appear even when you choose Gold or a Golden Key. Clearing a screen does not automatically restore XP, Gold, or HP already deducted. Clearing the Focus/Protocol daily-limit penalty screen keeps that gate cleared for the current day; it does not remove configured app or screen-time limits.</p>
+            <p>Rosvon includes Google Mobile Ads for penalty-display and user-initiated rewarded-ad flows. The release build is configured to request real ads using production Google AdMob identifiers; debug and performance builds use test identifiers. This does not guarantee that an ad will be available or shown. If an ad request is made, Google's SDK may process:</p>
             <ul>
                 <li>Device advertising identifier (Google Advertising ID)</li>
                 <li>Device information (model, OS version)</li>
@@ -580,7 +588,7 @@
                     <tr>
                         <td>Google Play Billing</td>
                         <td>Google LLC</td>
-                        <td>In-app purchases and subscription processing</td>
+                        <td>Localized prices and checkout; purchase/subscription verification, renewal notifications, acknowledgement/consumption, and refund or chargeback reconciliation</td>
                     </tr>
                     <tr>
                         <td>Google Drive API</td>
@@ -596,6 +604,11 @@
                         <td>Firebase AI Logic / Agent Platform Gemini API</td>
                         <td>Google LLC</td>
                         <td>Aria responses and AI memory-classification requests</td>
+                    </tr>
+                    <tr>
+                        <td>Google Search grounding</td>
+                        <td>Google LLC</td>
+                        <td>Model-selected web searches using queries derived from your message and attached AI context; processing and search-log retention are described in section 5.2</td>
                     </tr>
                     <tr>
                         <td>Firebase Cloud Functions</td>
@@ -628,9 +641,9 @@
                         <td>Download the optional on-device embedding model files over HTTPS; the host may receive ordinary network request metadata such as IP address and user agent</td>
                     </tr>
                     <tr>
-                        <td>YouTube and external browser links</td>
+                        <td>Embedded YouTube player and external video/web links</td>
                         <td>Google LLC and linked-site operators</td>
-                        <td>Open educational videos or web pages outside Rosvon; the destination handles data under its own policy</td>
+                        <td>Play educational videos inside Rosvon through an embedded YouTube player and open external video or web links. Loading content or opening links can send network request metadata to Google/YouTube or the linked site, which processes it under its own privacy policy</td>
                     </tr>
                     <tr>
                         <td>Remote article/image hosts</td>
@@ -658,7 +671,7 @@
             <h2>9. Data Retention and Account Deletion</h2>
             <ul>
                 <li><strong>Local Data:</strong> Rosvon app-private records remain until removed with an app control, Android's clear-data action, a successful in-app account-deletion flow, or uninstall. Provider-held records are separate.</li>
-                <li><strong>Firebase/Auth/Storage Data:</strong> The in-app deletion flow attempts to delete Auth, user_info, user_data, community profile, profile pictures, Play purchase-token records, and challenge records. It is network/provider dependent and may require retry or support.</li>
+                <li><strong>Firebase/Auth/Storage Data:</strong> The in-app deletion flow attempts to delete Auth, user_info, user_data, community profile, profile pictures, user-linked Play purchase-token, billing-event, void-event, and challenge records. It is network/provider dependent and may require retry or support.</li>
                 <li><strong>Current Backend Exception:</strong> The current deletion Function does not automatically delete the top-level <strong>ai_credit_consumptions</strong> and <strong>golden_key_redemptions</strong> records. Those records can contain Firebase user ID, request/event identifiers, quantities or amounts, product/reward context, and timestamps. The current code defines no automatic expiry period for them. This implementation should be corrected before publication.</li>
                 <li><strong>Email Requests:</strong> You may ask for server-account deletion at <a href="mailto:rosvon.support@gmail.com">rosvon.support@gmail.com</a>. Email cannot remove app-private data from your phone or files in your Drive account. No fixed acknowledgement or completion time is guaranteed by the App.</li>
                 <li><strong>Google Drive Backups:</strong> The in-app flow attempts deletion only when local backup/sync markers identify a Rosvon backup. Network, authorization, provider failure, or lost local markers can leave Drive App Data files behind; use Google Account controls or contact support if the App cannot remove them.</li>
@@ -678,11 +691,11 @@
                 <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data.</li>
                 <li><strong>Deletion:</strong> Start the current in-app deletion attempt from <strong>Help &amp; Support</strong>, or request manual server-account handling at <a href="mailto:rosvon.support@gmail.com">rosvon.support@gmail.com</a>. Section 9 lists the current backend, Drive, local-device, provider, and transaction-record limitations.</li>
                 <li><strong>Data Portability:</strong> Ask for available account data in a structured form where applicable. Drive backup is intended for Rosvon restore and is not a complete export: it excludes AI chat/memories and some Protocol focus history.</li>
-                <li><strong>Withdraw Consent:</strong> Revoke consent for cloud sync and optional app features via Settings, and control Aria's access to app content via <strong>Aria → three-dot menu → Privacy</strong>.</li>
+                <li><strong>Withdraw Consent:</strong> Use available feature controls and contact support to withdraw consent you previously provided. Aria's content controls are at <strong>Aria → three-dot menu → Privacy</strong>; turning off context does not stop transmission of a message you later submit or erase previous chats and memories. Disabling backup does not delete existing Drive files. An Android permission or sign-in is not consent to every optional processing purpose.</li>
             </ul>
 
             <h3>For EU/EEA Users (GDPR)</h3>
-            <p>Under the General Data Protection Regulation, you additionally have the right to:</p>
+            <p>Where the General Data Protection Regulation applies to our processing of your data, you may additionally have rights to:</p>
             <ul>
                 <li>Object to processing based on legitimate interests.</li>
                 <li>Restrict processing of your personal data.</li>
@@ -690,16 +703,16 @@
             </ul>
 
             <h3>For California Users (CCPA/CPRA)</h3>
-            <p>Under the California Consumer Privacy Act and California Privacy Rights Act, you have the right to:</p>
+            <p>Where the California Consumer Privacy Act and California Privacy Rights Act apply to us and your data, you may have rights to:</p>
             <ul>
                 <li>Know what personal information is collected, used, and shared.</li>
                 <li>Request deletion of your personal information.</li>
-                <li>Opt-out of the sale of personal information. <strong>We do not sell your personal information.</strong></li>
+                <li>Opt out of sale or sharing as those terms are defined by applicable law, and request limits on qualifying sensitive-data use. Rosvon does not sell private app records; the legal treatment of third-party advertising data must be assessed separately.</li>
                 <li>Non-discrimination for exercising your privacy rights.</li>
             </ul>
 
             <h3>For Users in Other Jurisdictions</h3>
-            <p>If you are located in any other jurisdiction with applicable data protection laws (e.g., LGPD in Brazil, POPIA in South Africa, PDPA in Singapore/Thailand, or India's DPDP Act), we will honor your rights as required by applicable law. Contact us using the details in Section 15 to exercise your rights.</p>
+            <p>If you are located in any other jurisdiction with applicable data protection laws (e.g., LGPD in Brazil, POPIA in South Africa, PDPA in Singapore/Thailand, or India's DPDP Act), we will honor rights under the provisions that apply to us and are in force. Contact us using the details in Section 15 to exercise your rights.</p>
 
             <p>To exercise a legally available right, contact us using Section 15. We will respond within the period required by applicable law after any necessary identity verification. The App itself does not guarantee a fixed response time.</p>
         </section>
@@ -713,11 +726,12 @@
 
         <!-- ═══ 12. Children's Privacy ═══════════════════════════════════ -->
         <section>
-            <h2>12. Children's Privacy</h2>
-            <p>Rosvon is intended only for people aged 18 or older and is not offered through parental consent. The current App does not technically verify date of birth or age, so a user must not use it if under 18.</p>
-            <p>If you believe an under-18 person has created an account, contact us using Section 15. We will handle the report and any required restriction or deletion under applicable law. The current general deletion limitations in Section 9 also apply until the implementation is corrected.</p>
+            <h2>12. Teenagers and Children's Privacy</h2>
+            <p>Rosvon is intended for users aged 13 and above, including teenagers, and is not intended for children under 13. Users aged 13–17 need a parent or lawful guardian to review and accept the Terms and authorize use. Applicable local age and parental-consent requirements take precedence. The current App does not yet technically verify age, guardian identity, or guardian acceptance; this policy does not claim that verified parental consent is collected.</p>
+            <p>A parent or lawful guardian may contact rosvon.support@gmail.com about a young user's account, access, correction, withdrawal of any consent they provided, or deletion. If you believe a child under 13 is using Rosvon, or a young user is using it without required authorization, contact us. We will handle requests under applicable law after appropriate identity and authority checks; the deletion limitations described above still apply. Do not email passwords, payment-card details, government identity documents, or sexual images of children.</p>
         </section>
 
+        <p>Guardian acceptance of the Terms is separate from consent to personal-data processing. It does not authorize prohibited tracking, behavioral monitoring, or targeted advertising to children. Current ad and AI controls must be assessed against the applicable age, region, law, and provider requirements before those services are offered to young users.</p>
         <!-- ═══ 13. Data Security Incident Response ══════════════════════ -->
         <section>
             <h2>13. Data Security Incident Response</h2>
@@ -747,7 +761,7 @@
             <h2>15. Contact Us</h2>
             <p>If you have any questions, concerns, requests, or complaints regarding this Privacy Policy or our data practices, please contact us at:</p>
             <div class="info-box">
-                <p><strong>Developer:</strong> Roshan Sharma</p>
+                <p><strong>Developer and privacy/grievance contact:</strong> Roshan Sharma</p>
                 <p><strong>Email:</strong> <a href="mailto:rosvon.support@gmail.com">rosvon.support@gmail.com</a></p>
                 <p><strong>App:</strong> Rosvon | Self-Improvement</p>
                 <p><strong>Platform:</strong> Google Play Store (Android)</p>
@@ -814,9 +828,9 @@
                     </tr>
                     <tr>
                         <td>Device or advertising identifiers and ad interactions</td>
-                        <td>May be processed when Google test ads initialize/load</td>
+                        <td>May be processed when Google Mobile Ads initializes or loads ads</td>
                         <td>Processed by Google Mobile Ads</td>
-                        <td>Test ad delivery, measurement, security, and fraud prevention</td>
+                        <td>Ad delivery, measurement, security, and fraud prevention</td>
                     </tr>
                     <tr>
                         <td>Purchase history, tokens/hashes, products, entitlements, AI-credit use, and redemptions</td>

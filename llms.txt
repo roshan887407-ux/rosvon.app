@@ -2,17 +2,17 @@
 
 > Rosvon | Self-Improvement is an Android self-development ecosystem for building habits, organizing tasks and goals, journaling, managing projects, practicing digital discipline, using gamification, and accessing optional AI coaching.
 
-Official website: https://rosvon.online/
+Official website: https://rosvon.app/
 Android app: https://play.google.com/store/apps/details?id=com.roshan.rosvon
 Developer: Roshan Sharma
 
 ## Primary pages
 
-- [Home](https://rosvon.online/): Product overview, philosophy, features, digital discipline tools, Aria AI, privacy principles, and download link.
-- [Privacy Policy](https://rosvon.online/privacy-policy.html): How Rosvon handles data and privacy.
-- [Terms of Service](https://rosvon.online/terms-of-service.html): Terms governing use of Rosvon.
-- [Community Guidelines](https://rosvon.online/community-guidelines.html): Rules for Rosvon community features.
-- [Delete Your Data](https://rosvon.online/delete-account.html): Account and data deletion options.
+- [Home](https://rosvon.app/): Product overview, philosophy, features, digital discipline tools, Aria AI, privacy principles, and download link.
+- [Privacy Policy](https://rosvon.app/privacy-policy.html): How Rosvon handles data and privacy.
+- [Terms of Service](https://rosvon.app/terms-of-service.html): Terms governing use of Rosvon.
+- [Community Guidelines](https://rosvon.app/community-guidelines.html): Rules for Rosvon community features.
+- [Delete Your Data](https://rosvon.app/delete-account.html): Account and data deletion options.
 
 ## Core topics
 
